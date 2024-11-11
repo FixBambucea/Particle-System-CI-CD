@@ -35,11 +35,10 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/') && matrix.build-configuration == 'Release'
       run: |
         mkdir -p "${{ env.ZIP_NAME }}"
-        cp bin/Release-linux-x86_64/${{ env.ZIP_NAME }}/*.exe ${{ env.ZIP_NAME }}
-        cp bin/Release-linux-x86_64/${{ env.ZIP_NAME }}/*.dll ${{ env.ZIP_NAME }}
+        cp bin/Release-linux-x86_64/${{ env.PROJECT_NAME }}/${{ env.PROJECT_NAME }} ${{ env.ZIP_NAME }}
 
         mkdir -p ${{ env.ZIP_NAME }}/shaders
-        cp -r ${{ env.ZIP_NAME }}/shaders/* ${{ env.ZIP_NAME }}/shaders/
+        cp -r ${{ env.PROJECT_NAME }}/shaders/* ${{ env.ZIP_NAME }}/shaders/
 
         ls -la ${{ env.ZIP_NAME }}
     

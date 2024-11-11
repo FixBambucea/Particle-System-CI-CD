@@ -26,3 +26,7 @@ jobs:
     - name: Setup
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: ./generate_project.sh
+
+    - name: Build
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: make config=${{matrix.build-configuration}}

@@ -44,7 +44,7 @@ jobs:
         copy bin/Release-windows-x86_64/${{ env.PROJECT_NAME }}/*.exe ${{ env.ZIP_NAME }}
 
         mkdir -p "${{ env.ZIP_NAME }}\shaders"
-        xcopy ${{ env.PROJECT_NAME }}\shaders "${{ env.ZIP_NAME }}\shaders" /E /H
+        xcopy ${{ env.PROJECT_NAME }}\shaders/*.spv "${{ env.ZIP_NAME }}\shaders" /E /H
 
         dir /a ${{ env.ZIP_NAME }}
     

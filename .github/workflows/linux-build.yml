@@ -14,8 +14,8 @@ jobs:
     strategy:
         fail-fast: false
         matrix:
-          build-configuration: [Debug, Release]
-          build-platform: [x64]
+          build-configuration: [debug, release]
+          build-platform: [x64] # TODO: remove
 
     steps:
     - name: Clone Git Repository
